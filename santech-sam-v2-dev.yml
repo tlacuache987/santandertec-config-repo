@@ -2,7 +2,7 @@
 
 # Servers to proxy configuration
 proxied:
-  servers: http://localhost:8080/some-path/ # This property must be set, can set multiple using comma.
+  servers: http://transfers-host1:8088,http://transfers-host2:8089 # This property must be set, can set multiple using comma.
 
 # Zuul routes configuration
 zuul:
