@@ -1,76 +1,37 @@
-# Configuration for Zuul - Reverse Proxy Service
+#debug: true
+#trace: true
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        cloud:
+#          netflix: trace
 
-# Servers to proxy configuration
-proxied:
-  servers: http://transfers-host1:8088,http://transfers-host2:8089 # This property must be set, can set multiple using comma.
+logging:
+  level:
+    mx:
+      santandertec:
+        gateway:
+          filters: info #debug to show info
 
-# Zuul routes configuration
-zuul:
-  ignored-patterns:
-  - /login/**
-  - /logout/**
-  routes:
-    router-service:
-      path: /**
-      service-id: router-service
-      strip-prefix: true
-      sensitive-headers:
-      - Cookie,Set-Cookie,Authorization
-
-# Ribbon configuration (without Eureka)
-ribbon:
-  eureka:
-    enabled: false
-
-# Router configuration for Ribbon
-router-service:
-  ribbon:
-    listOfServers: ${proxied.servers}
-
-
-# ====================================
-
-# Configuration for Login Service
+    org:
+      springframework:
+        security: info
 
 spring:
-  profiles:
-    active: dev
-
-# Hibernate JPA configuration
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-    show-sql: true
-
-# Thymeleaf configuration
-  thymeleaf:
-    template-loader-path: classpath:/templates
-    suffix: .html
-    cache: false
-
-# Resource Boundle Message configuration
-  messages:
-    basename: validation
-
-# External LDAP directory configuration
-  ldap:
-    urls:
-    - ldap://localhost:10389
-    base: ou=people,dc=mycompany,dc=com
-    #username: cn=admin,dc=mycompany,dc=com
-    #password: secret
-
-# Embedded LDAP server config:
-    #embedded:
-      #base-dn:
-      #- dc=asb,dc=com
-      #credential:
-        #username: uid=admin
-        #password: secret
-      #ldif: classpath:asb-ldap.ldif
-      #port: 123
-      #validation:
-        #enabled: false
-
-  session:
-    timeout: 60s
+  application:
+    name: santech-sam-v2
+  cloud:
+    config:
+      enabled: true
+      uri: http://gp-config-service:9099
+      name: ${spring.application.name}
+      label: ${spring.profiles.active}
+      profile: ${spring.profiles.active}
+      fail-fast: false
+      retry:
+        max-attempts: 10000
+    discovery:
+      enabled: false
+    #retry:
+       #max-attempts: 10000
