@@ -32,14 +32,17 @@ router-service:
 
 # Configuration for Login Service
 
-# Hibernate JPA configuration
 spring:
+  profiles:
+    active: dev
+
+# Hibernate JPA configuration
   jpa:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
 
-# thymeleaf configuration
+# Thymeleaf configuration
   thymeleaf:
     template-loader-path: classpath:/templates
     suffix: .html
