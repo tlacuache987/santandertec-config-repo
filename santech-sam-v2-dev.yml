@@ -58,7 +58,7 @@ spring:
     - ldap://localhost:10389
     base: ou=people,dc=mycompany,dc=com
     #username: cn=admin,dc=mycompany,dc=com
-    #password: secret
+    password: '{cipher}1baece1b63bd4e25e292b11c656c3bef5f7e6efa073137a7d5aa88a0d336a738'
 
 # Embedded LDAP server config:
     #embedded:
@@ -82,6 +82,6 @@ spring:
 
 mi:
   dato:
-    encriptado: '{cipher}83de8c339705e91c0f46b86bcbfa29579b43b651a3c602a1d6c691c57267d110'
+    encriptado: '{cipher}1baece1b63bd4e25e292b11c656c3bef5f7e6efa073137a7d5aa88a0d336a738'
     
     
