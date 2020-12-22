@@ -79,3 +79,9 @@ spring:
   redis:
     host: redis
     port: 6379
+
+mi:
+  dato:
+    encriptado: {cipher}2cdcc84a189e2dc3fc6aa9dcdd61558d9bb895d257b19f29b502db22d25d6ecbcb560fdc33a79e231431a6c4422f2aae
+    
+    
