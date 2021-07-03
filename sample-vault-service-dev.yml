@@ -10,7 +10,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/vault-employee
     username: ${db.username}
-    password: ${db.password}
+    password: ${db.passwordx}
     driver-class-name: com.mysql.jdbc.Driver
     
 hello: Hello from Github and Spring Cloud Config Server (dev profile)
