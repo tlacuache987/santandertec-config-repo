@@ -13,4 +13,4 @@ spring:
     password: ${db.password}
     driver-class-name: com.mysql.jdbc.Driver
     
-hello: Hello from Github and Spring Cloud Config Server (dev profile)
+hello: Hello from Github and Spring Cloud Config Server (dev profile) =)
