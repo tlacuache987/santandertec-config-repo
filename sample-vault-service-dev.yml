@@ -9,7 +9,7 @@ spring:
 
   datasource:
     url: ${db.datasource.url}
-    #url: jdbc:mysql://localhost:3306/vault-employee
+    #url: jdbc:mysql://localhost:3306/vault-employee-dev
     username: ${db.username}
     password: ${db.password}
     driver-class-name: com.mysql.jdbc.Driver
