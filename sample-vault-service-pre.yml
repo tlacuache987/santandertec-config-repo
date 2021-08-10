@@ -10,8 +10,8 @@ spring:
   datasource:
     url: ${db.datasource.url}
     #url: jdbc:postgresql://localhost:5432/vault-employee-pre
-    username: postgres #${db.username}
-    password: #${db.password}
+    username: ${db.username}
+    password: ${db.password}
     driver-class-name: org.postgresql.Driver
     
-hello: Hello from Github and Spring Cloud Config Server (pre profile)
+hello: Hello from Github and Spring Cloud Config Server (pre profile, connecting to postgresql)
